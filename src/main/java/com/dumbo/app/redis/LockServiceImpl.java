@@ -1,3 +1,4 @@
+/*
 package com.autonavi.traffic.autobot.router.service.impl;
 
 
@@ -12,18 +13,22 @@ import redis.clients.jedis.params.SetParams;
 import java.util.Arrays;
 import java.util.UUID;
 
+*/
 /**
  * @author dongrui.zdr
  * @ClassName LockServiceImpl
  * @Description 锁操作实现类
  * @date 2019-06-04 11:03
- */
+ *//*
+
 public class LockServiceImpl<T, RouterConfig> implements LockService<T> {
     private static final Logger logger = LoggerFactory.getLogger(LockServiceImpl.class);
 
-    /**
+    */
+/**
      * ?¨Òªì©l¤Æ«È?ºÝ
-     */
+     *//*
+
     private static class SingletonHolder {
         private static final LockService INSTANCE = new LockServiceImpl();
     }
@@ -35,22 +40,28 @@ public class LockServiceImpl<T, RouterConfig> implements LockService<T> {
         return LockServiceImpl.SingletonHolder.INSTANCE;
     }
 
-    /**
+    */
+/**
      * Jedis?
-     */
+     *//*
+
     private JedisPool jedisPool;
 
-    /**
+    */
+/**
      * °t¸m?
-     */
+     *//*
+
     private RouterConfig config;
 
-    /**
+    */
+/**
      * ???¨ú?¡Aget©Îput¥¢?³£¤À??¦æ­«?¡A¤ä«ù­«¤J
      *
      * @param key
      * @return
-     */
+     *//*
+
     @Override
     public boolean tryLock(T key, String reqValue) {
         try {
@@ -84,20 +95,24 @@ public class LockServiceImpl<T, RouterConfig> implements LockService<T> {
         return false;
     }
 
-    /**
+    */
+/**
      * ¤£¥i­«¤J
      *
      * @param key
      * @return
-     */
+     *//*
+
     @Override
     public boolean tryLock(T key) {
         return tryLock(key, null);
     }
 
-    /**
+    */
+/**
      * §P?¬O§_¬O?«e?µ{«ù¦³ªº?¡A?©ñ?
-     */
+     *//*
+
     @Override
     public boolean unlock(T key, String value) {
         Jedis jedis = jedisPool.getResource();
@@ -134,13 +149,15 @@ public class LockServiceImpl<T, RouterConfig> implements LockService<T> {
 
 
 
-    /**
+    */
+/**
      * @Description: delLock  ?°£?
      * @param: [lockKey]
      * @return: java.lang.Long
      * @Author: dongrui.zdr
      * @Date: 2019-06-04
-     */
+     *//*
+
     @Override
     public Long delLock(T key) {
         Jedis jedis = jedisPool.getResource();
@@ -162,13 +179,15 @@ public class LockServiceImpl<T, RouterConfig> implements LockService<T> {
         return lockValue;
     }
 
-    /**
+    */
+/**
      * @Description: getLock ?¨ú?­È
      * @param: [dataVersion]
      * @return: java.lang.String
      * @Author: dongrui.zdr
      * @Date: 2018/7/25
-     */
+     *//*
+
     @Override
     public String getLock(T key) {
         Jedis jedis = jedisPool.getResource();
@@ -190,13 +209,15 @@ public class LockServiceImpl<T, RouterConfig> implements LockService<T> {
         return lockValue == null ? null : new String(lockValue);
     }
 
-    /**
+    */
+/**
      * @Description: setExpire ?¸m?¶W???
      * @param: [dataVersion]
      * @return: void
      * @Author: dongrui.zdr
      * @Date: 2018/7/25
-     */
+     *//*
+
     @Override
     public void setExpire(T key) {
         Jedis jedis = jedisPool.getResource();
@@ -219,13 +240,15 @@ public class LockServiceImpl<T, RouterConfig> implements LockService<T> {
     }
 
 
-    /**
+    */
+/**
      * @Description: getExpire ?¨ú?¶W???
      * @param: [dataVersion]
      * @return: java.lang.Long
      * @Author: dongrui.zdr
      * @Date: 2018/7/25
-     */
+     *//*
+
     @Override
     public Long getExpire(T key) {
         Jedis jedis = jedisPool.getResource();
@@ -247,7 +270,8 @@ public class LockServiceImpl<T, RouterConfig> implements LockService<T> {
         return time;
     }
 
-    /**
+    */
+/**
      * ¤èªk¥Î³~: ©ñ¤J?<br>
      * ??¨B?: <br>
      *
@@ -255,7 +279,8 @@ public class LockServiceImpl<T, RouterConfig> implements LockService<T> {
      * @param value ?­È
      * @return
      * @throws Exception
-     */
+     *//*
+
     @Override
     public  putLock(T key, String value) {
         Jedis jedis = jedisPool.getResource();
@@ -299,4 +324,4 @@ public class LockServiceImpl<T, RouterConfig> implements LockService<T> {
     private byte[] toKeyByte(T key) {
 //        return FastJsonUtils.toJsonByte(key);
         return "key.toString().getBytes()".split(".");
-    }
+    }*/
