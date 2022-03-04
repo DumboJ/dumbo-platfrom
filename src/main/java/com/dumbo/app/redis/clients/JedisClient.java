@@ -8,7 +8,9 @@ import redis.clients.jedis.JedisPool;
 @RequestMapping("/jedisSet")
 public class JedisClient {
     public void doWithJedisSingleton(){
-        JedisPool pool = new JedisPool("192.168.5.101", 63779,);
+        JedisPool pool = new JedisPool("192.168.5.101",
+                63779
+                );
         try (
                 Jedis jedis = pool.getResource()) {
             jedis.set("clientName", "Jedis");
